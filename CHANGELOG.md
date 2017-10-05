@@ -1,6 +1,10 @@
 # Change Log
 All enhancements and patches to Cookiecutter Golang will be documented in this file.
 
+## [2017-10-04]
+### changed
+- forked from https://github.com/lacion/cookiecutter-golang
+
 ## [2017-06-06]
 ### changed
 - updated CI templates to latest go versions

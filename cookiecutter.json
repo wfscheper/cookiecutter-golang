@@ -1,14 +1,18 @@
 {
-    "full_name": "Luis Morales",
-    "github_username": "lacion",
+    "full_name": "Your Name",
+    "email": "you@example.com",
+    "github_username": "username",
     "app_name": "mygolangproject",
-    "project_short_description": "A Golang project.",
-    "docker_hub_username": "lacion",
-    "docker_image": "lacion/docker-alpine:latest",
-    "docker_build_image": "lacion/docker-alpine:gobuildimage",
+    "short_description": "A Golang project.",
+    "license": ["Apache", "BSD", "MIT"],
+    "year": ["now", "2017"],
+    "docker_hub_username": "username",
+    "docker_image": "username/docker-alpine:latest",
+    "docker_build_image": "username/docker-alpine:gobuildimage",
     "use_docker": "y",
+    "go_gettable": "y",
     "use_git": "y",
-    "use_logrus_logging": "y",
-    "use_viper_config": "y",
-    "use_ci": ["travis", "circle", "none"]
+    "use_logrus": "n",
+    "use_viper": "y",
+    "use_ci": ["travis", "none"]
 }

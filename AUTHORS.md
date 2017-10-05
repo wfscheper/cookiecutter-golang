@@ -1,6 +1,10 @@
 # Credits
 
-## Development Lead
+## Modified by
+
+- Walter Scheper [wfscheper](https://github.com/wfscheper)
+
+## Original Development Lead
 
 - Luis Morales [lacion](https://github.com/lacion)
 

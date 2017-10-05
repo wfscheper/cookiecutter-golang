@@ -1,10 +1,25 @@
+{% if cookiecutter.license == "Apache" -%}
+// Copyright © {{cookiecutter.year}} {{cookiecutter.full_name}} <{{cookiecutter.email}}>
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+{% endif -%}
 package log
 
 import (
 	"os"
 
 	"github.com/Sirupsen/logrus"
-	{% if cookiecutter.use_viper_config == "y" %}"github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}/config"{% endif %}
+	{% if cookiecutter.use_viper == "y" %}"github.com/{{cookiecutter.github_username}}/{{cookiecutter.app_name}}/config"{% endif %}
 )
 
 // Logger defines a set of methods for writing application logs. Derived from and
@@ -42,7 +57,7 @@ func init() {
 	defaultLogger = newLogrusLogger(config.Config())
 }
 
-{% if cookiecutter.use_viper_config == "y" %}
+{% if cookiecutter.use_viper == "y" %}
 func NewLogger(cfg config.Provider) *logrus.Logger {
 	return newLogrusLogger(cfg)
 }
@@ -52,13 +67,13 @@ func NewLogger() *logrus.Logger {
 }
 {% endif %}
 
-{% if cookiecutter.use_viper_config == "y" %}
+{% if cookiecutter.use_viper == "y" %}
 func newLogrusLogger(cfg config.Provider) *logrus.Logger {
 {% else %}
 func newLogrusLogger() *logrus.Logger {
 {% endif %}
 	l := logrus.New()
-	{% if cookiecutter.use_viper_config == "y" %}
+	{% if cookiecutter.use_viper == "y" %}
 	if cfg.GetBool("json_logs") {
 		l.Formatter = new(logrus.JSONFormatter)
 	}

@@ -1,2 +1,4 @@
+{% if cookiecutter.go_gettable != "y" %}.gopath
+{%- endif %}
 bin
 vendor
